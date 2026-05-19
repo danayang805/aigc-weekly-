@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIGC 竞品周报</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { 50: '#f0f4ff', 100: '#dbe4ff', 200: '#bac8ff', 300: '#91a7ff', 400: '#748ffc', 500: '#5c7cfa', 600: '#4c6ef5', 700: '#4263eb', 800: '#3b5bdb', 900: '#364fc7' },
+                        surface: { 50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 700: '#334155', 800: '#1e293b', 900: '#0f172a' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        [x-cloak] { display: none !important; }
+        .impact-high { --tw-border-opacity:1; border-color: rgb(239 68 68 / var(--tw-border-opacity)); background-color: rgb(254 242 242); }
+        .impact-medium { --tw-border-opacity:1; border-color: rgb(245 158 11 / var(--tw-border-opacity)); background-color: rgb(255 251 235); }
+        .impact-low { --tw-border-opacity:1; border-color: rgb(34 197 94 / var(--tw-border-opacity)); background-color: rgb(240 253 244); }
+        .fade-in { animation: fadeIn 0.3s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-surface-50 min-h-screen" x-data="app()" x-cloak>
+
+    <!-- Header -->
+    <header class="bg-white border-b border-surface-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-brand-600 rounded-lg flex items-center justify-center">
+                    <span class="text-white font-bold text-sm">AI</span>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold text-surface-900">AIGC 竞品周报</h1>
+                    <p class="text-xs text-surface-700/60">广告营销 AIGC 赛道追踪</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <select x-model="currentWeek" @change="loadWeek()" class="text-sm border border-surface-200 rounded-lg px-3 py-1.5 bg-white focus:outline-none focus:ring-2 focus:ring-brand-500/20">
+                    <template x-for="w in weeks" :key="w.id">
+                        <option :value="w.id" x-text="w.period"></option>
+                    </template>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 py-6 space-y-6" x-show="data" x-transition>
+
+        <!-- Headline Banner -->
+        <section class="bg-gradient-to-r from-brand-700 to-brand-500 rounded-2xl p-6 text-white shadow-lg">
+            <div class="flex items-start gap-3">
+                <span class="text-2xl">🔥</span>
+                <div>
+                    <h2 class="text-xl font-bold mb-1" x-text="data.headline.title"></h2>
+                    <p class="text-white/80 text-sm leading-relaxed" x-text="data.headline.summary"></p>
+                </div>
+            </div>
+            <div class="mt-4 flex items-center gap-4 text-xs text-white/60">
+                <span x-text="'📅 ' + data.period"></span>
+                <span x-text="'📰 ' + data.title"></span>
+            </div>
+        </section>
+
+        <!-- Competitors Grid -->
+        <section>
+            <h3 class="text-base font-semibold text-surface-800 mb-4 flex items-center gap-2">
+                <span class="w-1 h-5 bg-brand-500 rounded-full"></span>
+                竞品动态
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <template x-for="(comp, idx) in data.competitors" :key="comp.name">
+                    <div class="bg-white rounded-xl border border-surface-200 p-5 hover:shadow-md transition-shadow fade-in"
+                         :style="'animation-delay:' + (idx * 80) + 'ms'">
+                        <!-- Competitor Header -->
+                        <div class="flex items-center gap-2 mb-3 pb-3 border-b border-surface-100">
+                            <span class="text-xl" x-text="comp.logo_emoji"></span>
+                            <div>
+                                <h4 class="font-semibold text-surface-900 text-sm" x-text="comp.name"></h4>
+                                <span class="text-xs text-surface-700/50" x-text="comp.company"></span>
+                            </div>
+                            <span class="ml-auto text-xs bg-surface-100 text-surface-700 px-2 py-0.5 rounded-full" x-text="comp.updates.length + '条更新'"></span>
+                        </div>
+                        <!-- Updates -->
+                        <div class="space-y-2.5">
+                            <template x-for="u in comp.updates" :key="u.title">
+                                <div class="border-l-2 pl-3 py-1"
+                                     :class="u.impact === 'high' ? 'impact-high' : u.impact === 'medium' ? 'impact-medium' : 'impact-low'">
+                                    <div class="flex items-center gap-1.5 mb-0.5">
+                                        <span class="text-[10px] font-medium px-1.5 py-0.5 rounded bg-surface-100 text-surface-700" x-text="u.type"></span>
+                                        <span class="text-[10px]" x-text="u.impact === 'high' ? '🔴' : u.impact === 'medium' ? '🟡' : '🟢'"></span>
+                                    </div>
+                                    <p class="text-sm font-medium text-surface-800" x-text="u.title"></p>
+                                    <p class="text-xs text-surface-700/60 mt-0.5 leading-relaxed" x-text="u.detail"></p>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </section>
+
+        <!-- Trends & Watch -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <!-- Trends -->
+            <section class="bg-white rounded-xl border border-surface-200 p-5">
+                <h3 class="text-base font-semibold text-surface-800 mb-4 flex items-center gap-2">
+                    <span class="w-1 h-5 bg-amber-500 rounded-full"></span>
+                    本周趋势洞察
+                </h3>
+                <div class="space-y-3">
+                    <template x-for="(t, i) in data.trends" :key="t.title">
+                        <div class="flex gap-3">
+                            <span class="flex-shrink-0 w-6 h-6 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center text-xs font-bold" x-text="i+1"></span>
+                            <div>
+                                <p class="text-sm font-medium text-surface-800" x-text="t.title"></p>
+                                <p class="text-xs text-surface-700/60 mt-0.5" x-text="t.detail"></p>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </section>
+
+            <!-- Next Watch -->
+            <section class="bg-white rounded-xl border border-surface-200 p-5">
+                <h3 class="text-base font-semibold text-surface-800 mb-4 flex items-center gap-2">
+                    <span class="w-1 h-5 bg-emerald-500 rounded-full"></span>
+                    下周关注
+                </h3>
+                <div class="space-y-2.5">
+                    <template x-for="(item, i) in data.next_watch" :key="item">
+                        <div class="flex items-start gap-2.5 p-2.5 bg-emerald-50 rounded-lg">
+                            <span class="text-emerald-600 text-sm mt-0.5">👁️</span>
+                            <p class="text-sm text-surface-800" x-text="item"></p>
+                        </div>
+                    </template>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-6xl mx-auto px-4 sm:px-6 py-8 text-center">
+        <p class="text-xs text-surface-700/40">AIGC 竞品周报 · AMS广告营销团队 · 每周一更新</p>
+    </footer>
+
+    <!-- Loading State -->
+    <div x-show="!data" class="flex items-center justify-center min-h-[60vh]">
+        <div class="text-center">
+            <div class="w-8 h-8 border-2 border-brand-500 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
+            <p class="text-sm text-surface-700/60">加载中...</p>
+        </div>
+    </div>
+
+    <script>
+        function app() {
+            return {
+                data: null,
+                currentWeek: '2026-05-18',
+                weeks: [
+                    { id: '2026-05-18', period: '2026.5.12 - 5.18' }
+                ],
+                async init() {
+                    await this.loadWeek();
+                },
+                async loadWeek() {
+                    try {
+                        const res = await fetch(`data/weekly-${this.currentWeek}.json`);
+                        this.data = await res.json();
+                    } catch (e) {
+                        console.error('Failed to load data:', e);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

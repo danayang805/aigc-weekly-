@@ -1,0 +1,69 @@
+{
+  "id": "2026-05-18",
+  "title": "AIGC竞品周报 #1",
+  "period": "2026.5.12 - 5.18",
+  "published": "2026-05-19",
+  "headline": {
+    "title": "可灵拆分Pre-IPO，估值200亿美元",
+    "summary": "快手正式将可灵AI拆分为独立实体进行Pre-IPO融资，估值200亿美元，标志着AIGC视频赛道进入资本化快车道。"
+  },
+  "competitors": [
+    {
+      "name": "可灵 (Kling)",
+      "company": "快手",
+      "logo_emoji": "🎬",
+      "updates": [
+        {"type": "融资", "title": "Pre-IPO拆分，估值200亿美元", "impact": "high", "detail": "快手正式将可灵AI拆分为独立实体，计划进行Pre-IPO融资，估值约200亿美元。"},
+        {"type": "产品", "title": "可灵2.0视频模型发布", "impact": "high", "detail": "支持最长3分钟生成，运动一致性和物理模拟大幅提升。"},
+        {"type": "商业化", "title": "API定价下调30%", "impact": "medium", "detail": "视频生成API价格全线下调，吸引更多开发者接入。"}
+      ]
+    },
+    {
+      "name": "即梦 / Seedance",
+      "company": "字节跳动",
+      "logo_emoji": "🌱",
+      "updates": [
+        {"type": "产品", "title": "Seedance 2.0正式商业化", "impact": "high", "detail": "火山引擎Agent Plan发布，Seedance 2.0开放API商业化接入。"},
+        {"type": "产品", "title": "豆包推出三档付费方案", "impact": "medium", "detail": "基础版/专业版/旗舰版三档，月费39/99/299元。"},
+        {"type": "功能", "title": "支持4K分辨率输出", "impact": "medium", "detail": "视频输出分辨率提升至4K，画质对标专业制作。"}
+      ]
+    },
+    {
+      "name": "即创",
+      "company": "巨量引擎",
+      "logo_emoji": "⚡",
+      "updates": [
+        {"type": "功能", "title": "智能脚本2.0上线", "impact": "medium", "detail": "结合行业知识库的广告脚本自动生成，支持20+行业模板。"},
+        {"type": "数据", "title": "日均生成素材量突破500万", "impact": "medium", "detail": "平台日均广告素材生成量突破500万条，同比增长180%。"}
+      ]
+    },
+    {
+      "name": "Lovart",
+      "company": "Lovart AI",
+      "logo_emoji": "🎨",
+      "updates": [
+        {"type": "产品", "title": "设计Agent模式公测", "impact": "high", "detail": "支持从brief到成稿的全流程AI设计，涵盖海报/banner/社媒图。"},
+        {"type": "功能", "title": "品牌记忆功能上线", "impact": "medium", "detail": "上传品牌VI后自动应用到所有生成内容，保证品牌一致性。"}
+      ]
+    },
+    {
+      "name": "TopView / TapNow",
+      "company": "TopView",
+      "logo_emoji": "📹",
+      "updates": [
+        {"type": "功能", "title": "一键成片3.0发布", "impact": "medium", "detail": "输入商品链接自动生成带口播的广告视频，支持数字人选择。"},
+        {"type": "合作", "title": "接入抖音小店API", "impact": "medium", "detail": "打通抖音小店商品数据，自动抓取商品信息生成广告素材。"}
+      ]
+    }
+  ],
+  "trends": [
+    {"title": "视频模型军备竞赛升级", "detail": "可灵2.0、Seedance 2.0同周发布，3分钟+长视频成为新基线。"},
+    {"title": "AIGC资本化加速", "detail": "可灵200亿估值拆分，行业头部玩家纷纷寻求独立融资。"},
+    {"title": "商业化路径趋同", "detail": "API降价+分层付费成标配，争夺开发者和中小客户。"}
+  ],
+  "next_watch": [
+    "可灵Pre-IPO具体融资进展及投资方",
+    "Seedance 2.0商业化首月数据表现",
+    "Lovart设计Agent模式正式版发布时间"
+  ]
+}
