@@ -85,10 +85,9 @@
                             </div>
                         </div>
                         <!-- Updates -->
-                        <div class="space-y-4 pl-2 border-l border-black/10">
+                        <div class="space-y-4">
                             <template x-for="u in comp.updates" :key="u.title">
-                                <div class="pl-5 hover-lift rounded-lg p-4 -ml-[1px] border-l-2"
-                                     :class="u.impact === 'high' ? 'border-l-black' : 'border-l-black/20'">
+                                <div class="hover-lift rounded-lg p-4 border border-black/5">
                                     <!-- Type + Impact -->
                                     <div class="flex items-center gap-2 mb-1">
                                         <span class="text-[11px] font-mono px-1.5 py-0.5 rounded bg-black/5 text-black/60" x-text="u.type"></span>
