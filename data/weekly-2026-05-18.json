@@ -5,7 +5,9 @@
   "published": "2026-05-19",
   "headline": {
     "title": "可灵拆分Pre-IPO，估值200亿美元",
-    "summary": "快手正式将可灵AI拆分为独立实体进行Pre-IPO融资，估值200亿美元，标志着AIGC视频赛道进入资本化快车道。"
+    "summary": "快手正式将可灵AI拆分为独立实体进行Pre-IPO融资，估值200亿美元，标志着AIGC视频赛道进入资本化快车道。",
+    "image": "https://picsum.photos/seed/kling-ipo/800/400",
+    "link": "https://36kr.com/p/example-kling-ipo"
   },
   "competitors": [
     {
@@ -13,9 +15,29 @@
       "company": "快手",
       "logo_emoji": "🎬",
       "updates": [
-        {"type": "融资", "title": "Pre-IPO拆分，估值200亿美元", "impact": "high", "detail": "快手正式将可灵AI拆分为独立实体，计划进行Pre-IPO融资，估值约200亿美元。"},
-        {"type": "产品", "title": "可灵2.0视频模型发布", "impact": "high", "detail": "支持最长3分钟生成，运动一致性和物理模拟大幅提升。"},
-        {"type": "商业化", "title": "API定价下调30%", "impact": "medium", "detail": "视频生成API价格全线下调，吸引更多开发者接入。"}
+        {
+          "type": "融资",
+          "title": "Pre-IPO拆分，估值200亿美元",
+          "impact": "high",
+          "detail": "快手正式将可灵AI拆分为独立实体，计划进行Pre-IPO融资，估值约200亿美元。",
+          "link": "https://36kr.com/p/example-kling-ipo",
+          "image": "https://picsum.photos/seed/kling-split/600/300"
+        },
+        {
+          "type": "产品",
+          "title": "可灵2.0视频模型发布",
+          "impact": "high",
+          "detail": "支持最长3分钟生成，运动一致性和物理模拟大幅提升。",
+          "link": "https://kling.kuaishou.com",
+          "case": {"desc": "3分钟连续叙事视频demo，人物动作连贯无跳变", "image": "https://picsum.photos/seed/kling-demo/600/300"}
+        },
+        {
+          "type": "商业化",
+          "title": "API定价下调30%",
+          "impact": "medium",
+          "detail": "视频生成API价格全线下调，吸引更多开发者接入。",
+          "link": "https://platform.kuaishou.com/kling"
+        }
       ]
     },
     {
@@ -23,9 +45,28 @@
       "company": "字节跳动",
       "logo_emoji": "🌱",
       "updates": [
-        {"type": "产品", "title": "Seedance 2.0正式商业化", "impact": "high", "detail": "火山引擎Agent Plan发布，Seedance 2.0开放API商业化接入。"},
-        {"type": "产品", "title": "豆包推出三档付费方案", "impact": "medium", "detail": "基础版/专业版/旗舰版三档，月费39/99/299元。"},
-        {"type": "功能", "title": "支持4K分辨率输出", "impact": "medium", "detail": "视频输出分辨率提升至4K，画质对标专业制作。"}
+        {
+          "type": "产品",
+          "title": "Seedance 2.0正式商业化",
+          "impact": "high",
+          "detail": "火山引擎Agent Plan发布，Seedance 2.0开放API商业化接入。",
+          "link": "https://www.volcengine.com/product/seedance",
+          "case": {"desc": "Agent自动编排：从文案到成片全程无人干预", "image": "https://picsum.photos/seed/seedance-agent/600/300"}
+        },
+        {
+          "type": "产品",
+          "title": "豆包推出三档付费方案",
+          "impact": "medium",
+          "detail": "基础版/专业版/旗舰版三档，月费39/99/299元。",
+          "link": "https://www.doubao.com/pricing"
+        },
+        {
+          "type": "功能",
+          "title": "支持4K分辨率输出",
+          "impact": "medium",
+          "detail": "视频输出分辨率提升至4K，画质对标专业制作。",
+          "image": "https://picsum.photos/seed/seedance-4k/600/300"
+        }
       ]
     },
     {
@@ -33,8 +74,20 @@
       "company": "巨量引擎",
       "logo_emoji": "⚡",
       "updates": [
-        {"type": "功能", "title": "智能脚本2.0上线", "impact": "medium", "detail": "结合行业知识库的广告脚本自动生成，支持20+行业模板。"},
-        {"type": "数据", "title": "日均生成素材量突破500万", "impact": "medium", "detail": "平台日均广告素材生成量突破500万条，同比增长180%。"}
+        {
+          "type": "功能",
+          "title": "智能脚本2.0上线",
+          "impact": "medium",
+          "detail": "结合行业知识库的广告脚本自动生成，支持20+行业模板。",
+          "link": "https://jichuang.oceanengine.com",
+          "case": {"desc": "电商服饰行业：输入商品卖点自动产出5套脚本方案", "image": "https://picsum.photos/seed/jichuang-script/600/300"}
+        },
+        {
+          "type": "数据",
+          "title": "日均生成素材量突破500万",
+          "impact": "medium",
+          "detail": "平台日均广告素材生成量突破500万条，同比增长180%。"
+        }
       ]
     },
     {
@@ -42,8 +95,21 @@
       "company": "Lovart AI",
       "logo_emoji": "🎨",
       "updates": [
-        {"type": "产品", "title": "设计Agent模式公测", "impact": "high", "detail": "支持从brief到成稿的全流程AI设计，涵盖海报/banner/社媒图。"},
-        {"type": "功能", "title": "品牌记忆功能上线", "impact": "medium", "detail": "上传品牌VI后自动应用到所有生成内容，保证品牌一致性。"}
+        {
+          "type": "产品",
+          "title": "设计Agent模式公测",
+          "impact": "high",
+          "detail": "支持从brief到成稿的全流程AI设计，涵盖海报/banner/社媒图。",
+          "link": "https://www.lovart.ai",
+          "case": {"desc": "从一句话brief到完成品牌海报，全程2分钟", "image": "https://picsum.photos/seed/lovart-agent/600/300"}
+        },
+        {
+          "type": "功能",
+          "title": "品牌记忆功能上线",
+          "impact": "medium",
+          "detail": "上传品牌VI后自动应用到所有生成内容，保证品牌一致性。",
+          "image": "https://picsum.photos/seed/lovart-brand/600/300"
+        }
       ]
     },
     {
@@ -51,8 +117,21 @@
       "company": "TopView",
       "logo_emoji": "📹",
       "updates": [
-        {"type": "功能", "title": "一键成片3.0发布", "impact": "medium", "detail": "输入商品链接自动生成带口播的广告视频，支持数字人选择。"},
-        {"type": "合作", "title": "接入抖音小店API", "impact": "medium", "detail": "打通抖音小店商品数据，自动抓取商品信息生成广告素材。"}
+        {
+          "type": "功能",
+          "title": "一键成片3.0发布",
+          "impact": "medium",
+          "detail": "输入商品链接自动生成带口播的广告视频，支持数字人选择。",
+          "link": "https://www.topview.com",
+          "case": {"desc": "美妆类目：商品链接→30秒种草视频，含AI口播", "image": "https://picsum.photos/seed/topview-demo/600/300"}
+        },
+        {
+          "type": "合作",
+          "title": "接入抖音小店API",
+          "impact": "medium",
+          "detail": "打通抖音小店商品数据，自动抓取商品信息生成广告素材。",
+          "link": "https://www.topview.com/douyin-integration"
+        }
       ]
     }
   ],
